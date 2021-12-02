@@ -54,3 +54,5 @@ def query():
 
     if query[-1] != '}':
         query = query + '}'
+
+    return query
