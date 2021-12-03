@@ -1,15 +1,22 @@
 import os
-from recopilador_datos import recopilador_datos
-from recopilador_datos import json_arr
+
+n_archivo = 1
 
 
-def conversor():
+def conversor(output):
+
+    assert isinstance(output, list)
+
+    global n_archivo
+    ext_archivo = '.md'
     file = open(
-        "//Users/pere/Desktop/CFGS_21_22/Proyecto_devops/Proyecto_Dan_Pere/prueba.md", "w")
-    input = recopilador_datos(json_arr)
-    for element in input:
-        file.write(element + os.linesep)
+        os.path.join(os.getcwd(), str(n_archivo) + ext_archivo), "w")
+
+    for element in output:
+        file.write(str(element) + os.linesep)
     file.close()
 
+    print('¡Archivo ' + str(n_archivo) + ' convertido correctamente!')
+    n_archivo += 1
 
-conversor()
+    return

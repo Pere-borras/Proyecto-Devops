@@ -1,38 +1,7 @@
-json_arr = {
-    "Nombre pack": "Pack Squanchy Style",
-    "calidad": "Basic",
-    "precio": "7",
-    "stock": "25",
-    "dimensiones": {
-        "altura": "3 cm",
-        "ancho": "6 cm"
-    },
-    "contenidos": {
-        "Rifle de pulso": {
-            "caracteristicas": {
-                "Precio": "5",
-                "Calidad": "30",
-                "Material": "normal",
-                "Cantidad": "1",
-                "Stock": "25",
-                "Demanda": "10"
-            }
-        },
-        "Poción del arcoiris": {
-            "caracteristicas": {
-                "Precio": "2",
-                "Calidad": "20",
-                "Material": "consumible",
-                "Cantidad": "1",
-                "Stock": "50",
-                "Demanda": "63"
-            }
-        }
-    }
-}
-
-
 def recopilador_datos(json_arr):
+
+    assert isinstance(json_arr, dict)
+
     output = []
     json_contenidos = json_arr['contenidos']
     llaves_contenidos = json_contenidos.keys()
@@ -67,4 +36,5 @@ def recopilador_datos(json_arr):
         output.append('    ' + '- ' + 'Demanda: ' +
                       str(json_arr['contenidos'][str(item)]['caracteristicas']['Demanda']))
 
+    assert isinstance(output, list)
     return output
