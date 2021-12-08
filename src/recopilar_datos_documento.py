@@ -1,6 +1,6 @@
-def datos_insertar_documento():
+def recopilar_datos_documento():
     
-    nombre_pack = input('Escriba el nombre del pack...')
+    nombre_pack = input('Escriba el nombre del pack...\n')
     
     calidad_pack = input('Escriba la calidad del pack, eligiendo entre: Basic, Standard y Premium\n')
     
