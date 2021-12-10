@@ -1,6 +1,6 @@
 from conectar_con_mongo import conectar_con_mongo
 
-def actualizar_basic(nombre_pack,calidad_pack,precio_pack,stock_pack,dimensiones_pack,contenido,documento):
+def actualizar_basic(nombre_pack,stock_pack,dimensiones_pack,contenido,documento):
     contenidos = {"contenidos":{
         contenido[0]:{
             "caracteristicas":{
@@ -27,7 +27,7 @@ def actualizar_basic(nombre_pack,calidad_pack,precio_pack,stock_pack,dimensiones
     
     documento_actualizado ={"Nombre pack":nombre_pack,
     "calidad":"Basic",
-    "precio":precio_pack,
+    "precio":contenido[1] + contenido[8],
     "stock":stock_pack,
     "dimensiones":{
         "altura":dimensiones_pack[0],

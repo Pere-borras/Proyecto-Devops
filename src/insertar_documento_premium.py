@@ -1,6 +1,6 @@
 from conectar_con_mongo import conectar_con_mongo
 
-def insertar_documento_premium(nombre_pack,calidad_pack,precio_pack,stock_pack,dimensiones_pack,contenido):
+def insertar_documento_premium(nombre_pack,stock_pack,dimensiones_pack,contenido):
     
     contenidos = {"contenidos":{
         contenido[0]:{
@@ -48,7 +48,7 @@ def insertar_documento_premium(nombre_pack,calidad_pack,precio_pack,stock_pack,d
     
     colleccion.insert_one({"Nombre pack":nombre_pack,
     "calidad":"Premium",
-    "precio":precio_pack,
+    "precio":contenido[1]+contenido[8]+contenido[15]+contenido[22],
     "stock":stock_pack,
     "dimensiones":{
         "altura":dimensiones_pack[0],

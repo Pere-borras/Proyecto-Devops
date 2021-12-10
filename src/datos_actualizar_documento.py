@@ -12,7 +12,7 @@ def datos_actualizar_documento():
 
     if documento:
         print('Ahora escriba el documento, cambiando los valores para actualizar')
-        nombre_pack, calidad_pack, precio_pack, stock_pack, dimensiones_pack, contenido = recopilar_datos_documento()
-        return nombre_pack, calidad_pack, precio_pack, stock_pack, dimensiones_pack, contenido, documento
+        nombre_pack, calidad_pack, stock_pack, dimensiones_pack, contenido = recopilar_datos_documento()
+        return nombre_pack, calidad_pack, stock_pack, dimensiones_pack, contenido, documento
     else:
         return
