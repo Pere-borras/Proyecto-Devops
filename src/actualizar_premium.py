@@ -4,7 +4,7 @@ def actualizar_premium(nombre_pack,stock_pack,dimensiones_pack,contenido,documen
     contenidos = {"contenidos":{
         contenido[0]:{
             "caracteristicas":{
-                "Precio":contenido[1],
+                "Precio":str(contenido[1]),
                 "Calidad":contenido[2],
                 "Material":contenido[3],
                 "Cantidad":contenido[4],
@@ -14,7 +14,7 @@ def actualizar_premium(nombre_pack,stock_pack,dimensiones_pack,contenido,documen
         },
         contenido[7]:{
             "caracteristicas":{
-                "Precio":contenido[8],
+                "Precio":str(contenido[8]),
                 "Calidad":contenido[9],
                 "Material":contenido[10],
                 "Cantidad":contenido[11],
@@ -24,7 +24,7 @@ def actualizar_premium(nombre_pack,stock_pack,dimensiones_pack,contenido,documen
         },
         contenido[14]:{
             "caracteristicas":{
-                "Precio":contenido[15],
+                "Precio":str(contenido[15]),
                 "Calidad":contenido[16],
                 "Material":contenido[17],
                 "Cantidad":contenido[18],
@@ -34,7 +34,7 @@ def actualizar_premium(nombre_pack,stock_pack,dimensiones_pack,contenido,documen
         },
         contenido[21]:{
             "caracteristicas":{
-                "Precio":contenido[22],
+                "Precio":str(contenido[22]),
                 "Calidad":contenido[23],
                 "Material":contenido[24],
                 "Cantidad":contenido[25],

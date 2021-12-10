@@ -5,7 +5,7 @@ def insertar_documento_basic(nombre_pack,stock_pack,dimensiones_pack,contenido):
     contenidos = {"contenidos":{
         contenido[0]:{
             "caracteristicas":{
-                "Precio":contenido[1],
+                "Precio":str(contenido[1]),
                 "Calidad":contenido[2],
                 "Material":contenido[3],
                 "Cantidad":contenido[4],
@@ -15,7 +15,7 @@ def insertar_documento_basic(nombre_pack,stock_pack,dimensiones_pack,contenido):
         },
         contenido[7]:{
             "caracteristicas":{
-                "Precio":contenido[8],
+                "Precio":str(contenido[8]),
                 "Calidad":contenido[9],
                 "Material":contenido[10],
                 "Cantidad":contenido[11],

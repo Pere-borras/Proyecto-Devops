@@ -5,7 +5,7 @@ def insertar_documento_standard(nombre_pack,stock_pack,dimensiones_pack,contenid
     contenidos = {"contenidos":{
         contenido[0]:{
             "caracteristicas":{
-                "Precio":contenido[1],
+                "Precio":str(contenido[1]),
                 "Calidad":contenido[2],
                 "Material":contenido[3],
                 "Cantidad":contenido[4],
@@ -15,7 +15,7 @@ def insertar_documento_standard(nombre_pack,stock_pack,dimensiones_pack,contenid
         },
         contenido[7]:{
             "caracteristicas":{
-                "Precio":contenido[8],
+                "Precio":str(contenido[8]),
                 "Calidad":contenido[9],
                 "Material":contenido[10],
                 "Cantidad":contenido[11],
@@ -25,7 +25,7 @@ def insertar_documento_standard(nombre_pack,stock_pack,dimensiones_pack,contenid
         },
         contenido[14]:{
             "caracteristicas":{
-                "Precio":contenido[15],
+                "Precio":str(contenido[15]),
                 "Calidad":contenido[16],
                 "Material":contenido[17],
                 "Cantidad":contenido[18],
