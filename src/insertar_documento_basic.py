@@ -28,7 +28,7 @@ def insertar_documento_basic(nombre_pack,stock_pack,dimensiones_pack,contenido):
     
     colleccion.insert_one({"Nombre pack":nombre_pack,
     "calidad":"Basic",
-    "precio":contenido[1] + contenido[8],
+    "precio":str(contenido[1] + contenido[8]),
     "stock":stock_pack,
     "dimensiones":{
         "altura":dimensiones_pack[0],

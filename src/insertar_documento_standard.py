@@ -38,7 +38,7 @@ def insertar_documento_standard(nombre_pack,stock_pack,dimensiones_pack,contenid
     
     colleccion.insert_one({"Nombre pack":nombre_pack,
     "calidad":"Standard",
-    "precio":contenido[1]+contenido[8]+contenido[15],
+    "precio":str(contenido[1]+contenido[8]+contenido[15]),
     "stock":stock_pack,
     "dimensiones":{
         "altura":dimensiones_pack[0],

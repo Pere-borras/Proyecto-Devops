@@ -38,7 +38,7 @@ def actualizar_standard(nombre_pack,stock_pack,dimensiones_pack,contenido,docume
     
     documento_actualizado ={"Nombre pack":nombre_pack,
     "calidad":"Standard",
-    "precio":contenido[1]+contenido[8]+contenido[15],
+    "precio":str(contenido[1]+contenido[8]+contenido[15]),
     "stock":stock_pack,
     "dimensiones":{
         "altura":dimensiones_pack[0],

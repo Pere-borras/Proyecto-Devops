@@ -47,7 +47,7 @@ def actualizar_premium(nombre_pack,stock_pack,dimensiones_pack,contenido,documen
     
     documento_actualizado = {"Nombre pack":nombre_pack,
     "calidad":"Premium",
-    "precio":contenido[1]+contenido[8]+contenido[15]+contenido[22],
+    "precio":str(contenido[1]+contenido[8]+contenido[15]+contenido[22]),
     "stock":stock_pack,
     "dimensiones":{
         "altura":dimensiones_pack[0],
