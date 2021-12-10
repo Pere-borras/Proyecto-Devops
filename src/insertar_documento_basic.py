@@ -1,11 +1,11 @@
 from conectar_con_mongo import conectar_con_mongo
 
-def insertar_documento_basic(nombre_pack,calidad_pack,precio_pack,stock_pack,dimensiones_pack,contenido):
+def insertar_documento_basic(nombre_pack,stock_pack,dimensiones_pack,contenido):
     
     contenidos = {"contenidos":{
         contenido[0]:{
             "caracteristicas":{
-                "Precio":contenido[1],
+                "Precio":str(contenido[1]),
                 "Calidad":contenido[2],
                 "Material":contenido[3],
                 "Cantidad":contenido[4],
@@ -15,7 +15,7 @@ def insertar_documento_basic(nombre_pack,calidad_pack,precio_pack,stock_pack,dim
         },
         contenido[7]:{
             "caracteristicas":{
-                "Precio":contenido[8],
+                "Precio":str(contenido[8]),
                 "Calidad":contenido[9],
                 "Material":contenido[10],
                 "Cantidad":contenido[11],
@@ -28,7 +28,7 @@ def insertar_documento_basic(nombre_pack,calidad_pack,precio_pack,stock_pack,dim
     
     colleccion.insert_one({"Nombre pack":nombre_pack,
     "calidad":"Basic",
-    "precio":precio_pack,
+    "precio":str(contenido[1] + contenido[8]),
     "stock":stock_pack,
     "dimensiones":{
         "altura":dimensiones_pack[0],

@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    {{ range .Site.Params.css -}}
+    <link rel="stylesheet" href="{{ . | relURL }}" />
+    {{ end -}}
+    <title>índice</title>
+  </head>
+  <body>
+    {{ partial "header" }}
+    {{ partial "aside" }}
+    <main>
+      {{.Content}}
+      <!-- Variable para que muestre el título de todas las páginas-->
+      {{range .Pages}}
+      <div>
+        <div class="titulo_pack">
+             <a href="{{.URL}}">{{.Title}}</a>
+        </div>
+        <div class="tag">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
+
+        <p>Aquí encontrará el contenido del "{{.Title}}".</p>
+   </div>
+      {{end}}
+    </main>
+    {{ partial "footer"}}
+  </body>
+</html>

@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: url("static/images/background.jpg");
+}
+
+header {
+  font-size: 24pt;
+  text-align: center;
+  border: 2px black solid;
+  background-color: greenyellow;
+}
+
+main {
+  margin-top: 20px;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 7%;
+  text-align: center;
+  font-size: 16pt;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 12pt;
+}
+
+footer {
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+button {
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  margin: 10px;
+  font-size: 12px;
+}
+
+button:hover {
+  background-color: gray;
+}

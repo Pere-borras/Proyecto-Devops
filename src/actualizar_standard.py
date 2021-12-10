@@ -1,11 +1,11 @@
 from conectar_con_mongo import conectar_con_mongo
 
-def actualizar_standard(nombre_pack,calidad_pack,precio_pack,stock_pack,dimensiones_pack,contenido,documento):
+def actualizar_standard(nombre_pack,stock_pack,dimensiones_pack,contenido,documento):
     
     contenidos = {"contenidos":{
         contenido[0]:{
             "caracteristicas":{
-                "Precio":contenido[1],
+                "Precio":str(contenido[1]),
                 "Calidad":contenido[2],
                 "Material":contenido[3],
                 "Cantidad":contenido[4],
@@ -15,7 +15,7 @@ def actualizar_standard(nombre_pack,calidad_pack,precio_pack,stock_pack,dimensio
         },
         contenido[7]:{
             "caracteristicas":{
-                "Precio":contenido[8],
+                "Precio":str(contenido[8]),
                 "Calidad":contenido[9],
                 "Material":contenido[10],
                 "Cantidad":contenido[11],
@@ -25,7 +25,7 @@ def actualizar_standard(nombre_pack,calidad_pack,precio_pack,stock_pack,dimensio
         },
         contenido[14]:{
             "caracteristicas":{
-                "Precio":contenido[15],
+                "Precio":str(contenido[15]),
                 "Calidad":contenido[16],
                 "Material":contenido[17],
                 "Cantidad":contenido[18],
@@ -38,7 +38,7 @@ def actualizar_standard(nombre_pack,calidad_pack,precio_pack,stock_pack,dimensio
     
     documento_actualizado ={"Nombre pack":nombre_pack,
     "calidad":"Standard",
-    "precio":precio_pack,
+    "precio":str(contenido[1]+contenido[8]+contenido[15]),
     "stock":stock_pack,
     "dimensiones":{
         "altura":dimensiones_pack[0],

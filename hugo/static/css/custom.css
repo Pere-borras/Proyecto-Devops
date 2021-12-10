@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: url("/images/background.jpg");
+}
+
+header {
+  font-size: 24pt;
+  text-align: center;
+  border: 2px black solid;
+  background-color: greenyellow;
+}
+
+main {
+  margin-top: 20px;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 7%;
+  text-align: center;
+  color: white;
+  font-size: 16pt;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.titulo_pack {
+  background-color: rgb(125, 172, 120);
+  border-radius: 5px;
+  margin: 1%;
+}
+
+.tag {
+  color: white;
+  font-size: 12pt;
+}
+
+.tag > a {
+  color: rgb(194, 194, 194);
+}
+
+.contenido_single {
+  font-size: 14pt;
+}
+
+.contenido_single > p {
+  text-align: center;
+}
+
+.contenido_single > h2 {
+  font-size: 18pt;
+  margin-bottom: 2%;
+  margin-top: 5%;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.contenido_single > h4 {
+  margin-bottom: 3%;
+  text-align: center;
+}
+
+.contenido_single > ul {
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-bottom: 1%;
+  font-size: 12pt;
+}
+
+.aside_izq {
+  position: fixed;
+  margin-right: 80%;
+  background-image: url("/images/aside.jpg");
+  background-color: black;
+  height: 100%;
+  width: 20%;
+  bottom: 0;
+}
+
+.aside_der {
+  position: fixed;
+  margin-left: 80%;
+  background-image: url("/images/aside.jpg");
+  background-color: black;
+  height: 100%;
+  width: 20%;
+  bottom: 0;
+}
+
+p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 12pt;
+}
+
+footer {
+  background-color: black;
+  bottom: 0;
+  width: 100%;
+}
+
+button {
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  margin: 10px;
+  font-size: 12px;
+  margin-left: 30%;
+}
+
+button:hover {
+  background-color: gray;
+}

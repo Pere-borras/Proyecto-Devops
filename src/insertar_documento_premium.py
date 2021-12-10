@@ -1,11 +1,11 @@
 from conectar_con_mongo import conectar_con_mongo
 
-def insertar_documento_premium(nombre_pack,calidad_pack,precio_pack,stock_pack,dimensiones_pack,contenido):
+def insertar_documento_premium(nombre_pack,stock_pack,dimensiones_pack,contenido):
     
     contenidos = {"contenidos":{
         contenido[0]:{
             "caracteristicas":{
-                "Precio":contenido[1],
+                "Precio":str(contenido[1]),
                 "Calidad":contenido[2],
                 "Material":contenido[3],
                 "Cantidad":contenido[4],
@@ -15,7 +15,7 @@ def insertar_documento_premium(nombre_pack,calidad_pack,precio_pack,stock_pack,d
         },
         contenido[7]:{
             "caracteristicas":{
-                "Precio":contenido[8],
+                "Precio":str(contenido[8]),
                 "Calidad":contenido[9],
                 "Material":contenido[10],
                 "Cantidad":contenido[11],
@@ -25,7 +25,7 @@ def insertar_documento_premium(nombre_pack,calidad_pack,precio_pack,stock_pack,d
         },
         contenido[14]:{
             "caracteristicas":{
-                "Precio":contenido[15],
+                "Precio":str(contenido[15]),
                 "Calidad":contenido[16],
                 "Material":contenido[17],
                 "Cantidad":contenido[18],
@@ -35,7 +35,7 @@ def insertar_documento_premium(nombre_pack,calidad_pack,precio_pack,stock_pack,d
         },
         contenido[21]:{
             "caracteristicas":{
-                "Precio":contenido[22],
+                "Precio":str(contenido[22]),
                 "Calidad":contenido[23],
                 "Material":contenido[24],
                 "Cantidad":contenido[25],
@@ -48,7 +48,7 @@ def insertar_documento_premium(nombre_pack,calidad_pack,precio_pack,stock_pack,d
     
     colleccion.insert_one({"Nombre pack":nombre_pack,
     "calidad":"Premium",
-    "precio":precio_pack,
+    "precio":str(contenido[1]+contenido[8]+contenido[15]+contenido[22]),
     "stock":stock_pack,
     "dimensiones":{
         "altura":dimensiones_pack[0],
