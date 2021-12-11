@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#hugo
+.hugo_build.lock
+.DS_Store

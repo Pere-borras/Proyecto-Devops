@@ -6,11 +6,27 @@ body {
   background: url("/images/background.jpg");
 }
 
+.faq_body {
+  background: url("/images/faq_background.jpg");
+}
+
 header {
   font-size: 24pt;
   text-align: center;
   border: 2px black solid;
   background-color: greenyellow;
+}
+
+header a {
+  color: black;
+}
+
+a {
+  color: rgb(12, 32, 10);
+}
+
+a:hover {
+  color: green;
 }
 
 main {
@@ -19,6 +35,17 @@ main {
   margin-right: 25%;
   margin-bottom: 7%;
   text-align: center;
+  color: white;
+  font-size: 16pt;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.faq_main {
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
   color: white;
   font-size: 16pt;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -42,6 +69,7 @@ main {
 
 .contenido_single {
   font-size: 14pt;
+  color: white;
 }
 
 .contenido_single > p {
@@ -51,10 +79,12 @@ main {
 .contenido_single > h2 {
   font-size: 18pt;
   margin-bottom: 2%;
-  margin-top: 5%;
+  margin-top: 2%;
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: rgb(125, 172, 120);
+  color: black;
 }
 
 .contenido_single > h4 {
@@ -110,6 +140,15 @@ button {
   margin-left: 30%;
 }
 
+button > a:hover {
+  color: white;
+}
+
 button:hover {
   background-color: gray;
+}
+
+.fondo_letras {
+  background-color: rgb(125, 172, 120);
+  border-radius: 5px;
 }
