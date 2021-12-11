@@ -1,5 +1,5 @@
-from conectar_con_mongo import conectar_con_mongo
-from recopilar_datos_documento import recopilar_datos_documento
+from mongo.conectar_con_mongo import conectar_con_mongo
+from insertar_documentos.recopilar_datos_documento import recopilar_datos_documento
 
 
 def datos_actualizar_documento():

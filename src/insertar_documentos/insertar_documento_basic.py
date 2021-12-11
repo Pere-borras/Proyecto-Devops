@@ -1,4 +1,4 @@
-from conectar_con_mongo import conectar_con_mongo
+from mongo.conectar_con_mongo import conectar_con_mongo
 
 def insertar_documento_basic(nombre_pack,stock_pack,dimensiones_pack,contenido):
     

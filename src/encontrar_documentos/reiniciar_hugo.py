@@ -8,4 +8,3 @@ def reiniciar_hugo():
         rmtree(packsPath) # Borra la carpeta recursivamente
     if not isdir(packsPath):
         mkdir(packsPath) # En caso de no existir la crea
-reiniciar_hugo()

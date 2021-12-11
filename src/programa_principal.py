@@ -1,11 +1,11 @@
-from query import sanear_query
-from request_query import query_request
-from app import app
-from mongo_find import mongo_find
-from insertar_documento import insertar_documento
-from actualizar_documento import actualizar_documento
-from query_borrar_documentos import query_D
-from reiniciar_hugo import reiniciar_hugo
+from encontrar_documentos.query import sanear_query
+from encontrar_documentos.request_query import query_request
+from encontrar_documentos.app import app
+from encontrar_documentos.reiniciar_hugo import reiniciar_hugo
+from mongo.mongo_find import mongo_find
+from insertar_documentos.insertar_documento import insertar_documento
+from actualizar_documentos.actualizar_documento import actualizar_documento
+from eliminar_documentos.query_borrar_documentos import query_D
 
 print()
 print()

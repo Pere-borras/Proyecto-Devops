@@ -1,7 +1,6 @@
-from conectar_con_mongo import conectar_con_mongo
+from mongo.conectar_con_mongo import conectar_con_mongo
 
-def insertar_documento_premium(nombre_pack,stock_pack,dimensiones_pack,contenido):
-    
+def actualizar_premium(nombre_pack,stock_pack,dimensiones_pack,contenido,documento):
     contenidos = {"contenidos":{
         contenido[0]:{
             "caracteristicas":{
@@ -46,7 +45,7 @@ def insertar_documento_premium(nombre_pack,stock_pack,dimensiones_pack,contenido
     
     colleccion = conectar_con_mongo()
     
-    colleccion.insert_one({"Nombre pack":nombre_pack,
+    documento_actualizado = {"Nombre pack":nombre_pack,
     "calidad":"Premium",
     "precio":str(contenido[1]+contenido[8]+contenido[15]+contenido[22]),
     "stock":stock_pack,
@@ -55,6 +54,6 @@ def insertar_documento_premium(nombre_pack,stock_pack,dimensiones_pack,contenido
         "ancho":dimensiones_pack[1]
     },
     "contenidos":contenidos["contenidos"]
-    })
-    
-    print("Se ha introducido el documento.")
+    }
+
+    colleccion.update_one(documento, documento_actualizado)
