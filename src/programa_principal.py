@@ -5,6 +5,7 @@ from mongo_find import mongo_find
 from insertar_documento import insertar_documento
 from actualizar_documento import actualizar_documento
 from query_borrar_documentos import query_D
+from reiniciar_hugo import reiniciar_hugo
 
 print()
 print()
@@ -19,6 +20,7 @@ if pregunta == '1':
 
 elif pregunta == '2':
     # obtener documentos de la BD
+    reiniciar_hugo()
     consulta = sanear_query(query_request())
     json_files = mongo_find(print(consulta))
     app(json_files)

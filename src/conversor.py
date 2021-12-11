@@ -10,7 +10,7 @@ def conversor(output):
     global n_archivo
     ext_archivo = '.md'
     file = open(
-        os.path.join(os.getcwd(), str(n_archivo) + ext_archivo), "w")
+        os.path.join(os.getcwd(), 'hugo','content','Packs',str(n_archivo) + ext_archivo), "w")
 
     for element in output:
         file.write(str(element) + os.linesep)
