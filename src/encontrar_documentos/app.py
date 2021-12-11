@@ -1,5 +1,5 @@
-from conversor import conversor
-from recopilador_datos import recopilador_datos
+from encontrar_documentos.conversor import conversor
+from encontrar_documentos.recopilador_datos import recopilador_datos
 
 
 def app(json_files):

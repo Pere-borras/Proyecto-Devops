@@ -1,7 +1,7 @@
-from recopilar_datos_documento import recopilar_datos_documento
-from insertar_documento_basic import insertar_documento_basic
-from insertar_documento_standard import insertar_documento_standard
-from insertar_documento_premium import insertar_documento_premium
+from insertar_documentos.recopilar_datos_documento import recopilar_datos_documento
+from insertar_documentos.insertar_documento_basic import insertar_documento_basic
+from insertar_documentos.insertar_documento_standard import insertar_documento_standard
+from insertar_documentos.insertar_documento_premium import insertar_documento_premium
 
 def insertar_documento ():
     try:

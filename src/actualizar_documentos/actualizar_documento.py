@@ -1,7 +1,7 @@
-from datos_actualizar_documento import datos_actualizar_documento
-from actualizar_basic import actualizar_basic
-from actualizar_standard import actualizar_standard
-from actualizar_premium import actualizar_premium
+from actualizar_documentos.datos_actualizar_documento import datos_actualizar_documento
+from actualizar_documentos.actualizar_basic import actualizar_basic
+from actualizar_documentos.actualizar_standard import actualizar_standard
+from actualizar_documentos.actualizar_premium import actualizar_premium
 
 def actualizar_documento():
     try:
