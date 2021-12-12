@@ -2,7 +2,7 @@ from encontrar_documentos.conversor import conversor
 from encontrar_documentos.recopilador_datos import recopilador_datos
 
 
-def app(json_files):
+def app(json_files, carpeta):
 
     counter = 0
 
@@ -14,6 +14,6 @@ def app(json_files):
         counter += 1
         json_arr = entrance
         output = recopilador_datos(json_arr)
-        conversor(output)
+        conversor(output, carpeta)
     print('Todos los archivos han sido convertidos (total de archivos -> ' +
           str(counter) + ')')
