@@ -1,6 +1,5 @@
 import pytest
-from src.mongo_find import mongo_find
-from src.conectar_con_mongo import conectar_con_mongo
+from src.mongo_archivos.mongo_find import mongo_find
 
 @pytest.mark.test_calidad_basic
 def test_calidad_basic():
@@ -9,13 +8,13 @@ def test_calidad_basic():
         assert element['calidad'] == 'Basic'
 
 @pytest.mark.test_calidad_standard
-def test_calidad_basic():
+def test_calidad_standard():
     Basic = mongo_find({'calidad':'Standard'})
     for element in Basic:
         assert element['calidad'] == 'Standard'
 
 @pytest.mark.test_calidad_premium
-def test_calidad_basic():
+def test_calidad_premium():
     Basic = mongo_find({'calidad':'Premium'})
     for element in Basic:
         assert element['calidad'] == 'Premium'
