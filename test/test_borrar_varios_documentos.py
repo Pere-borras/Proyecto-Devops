@@ -1,9 +1,9 @@
-from src.eliminar_documentos.borrar_un_documento import borrar_un_documento
+from src.eliminar_documentos.borrar_documentos import borrar_documentos
 from src.mongo_archivos.conectar_con_mongo import conectar_con_mongo
 import pytest
 
 pack_prueba = {
-    "Nombre pack": "Pack de prueba para test x",
+    "Nombre pack": "Pack de prueba para test",
     "calidad": "Premium",
     "precio": "52€",
     "stock": "23",
@@ -55,14 +55,14 @@ pack_prueba = {
     }
 }
 
-@pytest.mark.test_borrar_un_documento
-def test_borrar_un_documento():
+@pytest.mark.test_borrar_varios_documentos
+def test_borrar_varios_documentos():
 
     colleccion = conectar_con_mongo()
     colleccion.insert_one(pack_prueba)
 
-    query = {"Nombre pack": "Pack de prueba para test x"}
-    
-    borrar_un_documento(query)
+    query = {"Nombre pack": "Pack de prueba para test"}
 
-    assert colleccion.find_one(pack_prueba) == None
+    borrar_documentos(query)
+
+    assert colleccion.find_one(query) == None
