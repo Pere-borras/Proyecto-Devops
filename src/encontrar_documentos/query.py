@@ -1,4 +1,4 @@
-def query(request):
+def sanear_query(request):
 
     if request == '':
         request = '{' + request + '}'
