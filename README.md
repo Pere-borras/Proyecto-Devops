@@ -11,13 +11,13 @@ Este proyecto consiste en la creación de un programa Python que sea capaz de ob
 
 #### Arquitectura de la aplicación y tecnologías usadas.
 
-![Diagra de arquitectura](https://user-images.githubusercontent.com/91556389/145817110-cb0b500e-09e2-4738-99e0-e77afcdfb94c.png)
-
 Las tecnologías usadas en este proyecto han sido:
 
 - Mongo Atlas
 - Python
 - Hugo
+
+![Diagra de arquitectura](https://user-images.githubusercontent.com/91556389/145817110-cb0b500e-09e2-4738-99e0-e77afcdfb94c.png)
 
 #### Diagrama de componentes
 
