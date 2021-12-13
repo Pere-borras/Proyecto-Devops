@@ -1,6 +1,6 @@
-from eliminar_documentos.sanear_query_borrar import sanear_query_borrar
-from eliminar_documentos.borrar_documentos import borrar_documentos
-from eliminar_documentos.borrar_un_documento import borrar_un_documento
+from sanear_query_borrar import sanear_query_borrar
+from borrar_documentos import borrar_documentos
+from borrar_un_documento import borrar_un_documento
 
 
 def query_D():

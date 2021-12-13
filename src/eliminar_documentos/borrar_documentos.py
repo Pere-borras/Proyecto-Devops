@@ -1,3 +1,6 @@
+import os, sys
+p = os.path.abspath('src')
+sys.path.insert(1,p)
 from mongo_archivos.conectar_con_mongo import conectar_con_mongo
 
 def borrar_documentos (query):
