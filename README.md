@@ -1,6 +1,28 @@
-# Proyecto-Devops
+# Proyecto Devops - Daniel Sastre y Pere Antoni Borràs Expósito
+---
 ## Introduccion
-En este proyecto se nos ha encomendado la tarea de con una base de datos en mongodb, con el programa que creamos hacer CRUD
-y usar Hugo. ¿Que es CRUD? Son las iniciales de Create, Read, Update y Delete, es decir, tenemos que crear un programa el cual pueda crear documentos en la base de datos, que pueda leer los documentos que le pidamos y estos los pase a markdown
-para pasarselos a hugo y asi poder visualizarlo en una pagina web, tambien se tiene que poder actualizar un documento y por
-ultimo se tiene que poder borrar un documento.
+---
+
+Este proyecto consiste en la creación de un programa Python que sea capaz de obtener datos de una base de datos de MongoAtlas, además esta aplicación debe ser capaz de realizar CRUD (crear, leer, actualizar y eliminar documentos), con el objetivo de poder obtener archivos de la base de datos para que Hugo, un generador de sitios estáticos, lo visualice en una página web y se actualice a tiempo real a medida que se van realizando consultas en la base de datos a través del programa creado en Python.
+
+---
+
+### Descripción técnica
+
+#### Arquitectura de la aplicación y tecnologías usadas.
+
+foto de arquitectura
+
+Las tecnologías usadas en este proyecto han sido:
+
+- Mongo Atlas
+- Python
+- Hugo
+
+#### Diagrama de componentes
+
+foto de diagrama
+
+#### Distribución del tiempo 
+
+<img width="1304" alt="clockify" src="https://user-images.githubusercontent.com/91556382/145798715-9b447694-ef98-4c14-b273-646523b8d808.png">
