@@ -8,13 +8,31 @@ from insertar_documentos.recopilar_datos_documento import recopilar_datos_docume
 def actualizar_documento():
     
     try:
+
+        print()
+        print()
+
         nombre_documento = {'Nombre pack':input('Introduzca el nombre del pack que quiere actualizar\n')}
+
+        print()
+
+        colleccion = conectar_con_mongo()
+        encontrado = colleccion.find(nombre_documento)
+
+        print()
+
+        archivo = []
+
+        for documento in encontrado:
+            archivo.append(documento)
+
+        if len(archivo) < 1:
+            print('Ese documento no existe, inténtelo de nuevo')
+            return
     
         cantidad_actualizar = input("Si quiere actualizar un solo campo del documento escriba 1\n\
 Si quiere actualizar varios campos escriba varios\n")
-    
-        colleccion = conectar_con_mongo()
-        
+            
         # Una vez se decide si va a cambiar un campo o varios se decide que se hace
         if cantidad_actualizar == "1":
             

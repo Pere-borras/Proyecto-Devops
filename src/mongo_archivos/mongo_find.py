@@ -1,4 +1,4 @@
-from conectar_con_mongo import conectar_con_mongo
+from mongo_archivos.conectar_con_mongo import conectar_con_mongo
 
 def mongo_find(query):
     

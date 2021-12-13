@@ -6,8 +6,8 @@ import os
 @pytest.mark.test_archivo_existe
 def test_archivo_existe():
     output = [1, 2, 'hola']
-    conversor(output)
-    print(os.getcwd)
+    carpeta = 'Packs'
+    conversor(output, carpeta)
     assert os.path.join(os.getcwd(), 'hugo','content','Packs', '1.md')
     os.remove(os.path.join(os.getcwd(), 'hugo','content','Packs', '1.md'))
 
