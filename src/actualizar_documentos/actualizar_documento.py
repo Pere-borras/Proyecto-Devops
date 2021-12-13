@@ -1,23 +1,47 @@
-from actualizar_documentos.datos_actualizar_documento import datos_actualizar_documento
-from actualizar_documentos.actualizar_basic import actualizar_basic
-from actualizar_documentos.actualizar_standard import actualizar_standard
-from actualizar_documentos.actualizar_premium import actualizar_premium
+import os, sys
+
+p = os.path.abspath('src')
+sys.path.insert(1,p)
+from mongo_archivos.conectar_con_mongo import conectar_con_mongo
+from insertar_documentos.recopilar_datos_documento import recopilar_datos_documento
 
 def actualizar_documento():
+    
     try:
-        nombre_pack,calidad_pack,stock_pack,dimensiones_pack,contenido,documento = datos_actualizar_documento()
+        nombre_documento = {'Nombre pack':input('Introduzca el nombre del pack que quiere actualizar\n')}
     
-        if calidad_pack.lower() == 'basic':
-            actualizar_basic(nombre_pack,stock_pack,dimensiones_pack,contenido,documento)
+        cantidad_actualizar = input("Si quiere actualizar un solo campo del documento escriba 1\n\
+Si quiere actualizar varios campos escriba varios\n")
     
-        elif calidad_pack.lower() == 'standard':
-            actualizar_standard(nombre_pack,stock_pack,dimensiones_pack,contenido,documento)
+        colleccion = conectar_con_mongo()
+        
+        # Una vez se decide si va a cambiar un campo o varios se decide que se hace
+        if cantidad_actualizar == "1":
+            
+            #Primero se escribe el campo para que se quiere actualizar
+            campo = {input("Introduzca el campo que quiere actualizar\n"):input("Introduzca el valor cambiado\n")}
+
+            #Ahora se actualiza el campo indicandole pirmero a update_one el nombre del documento al cual le vamos a actualizar el campo
+            colleccion.update_one(nombre_documento,{"$set":campo})
+
+            print("Se ha actualizado el campo")
     
-        elif calidad_pack.lower() == 'premium':
-            actualizar_premium(nombre_pack,stock_pack,dimensiones_pack,contenido,documento)
-    
+        elif cantidad_actualizar == "varios":
+            
+            #Se recogen todos los datos nuevamente para actualizar el documento al completo 
+            documento = recopilar_datos_documento()
+            
+            #Y aqui se actualiza campo a campo
+            for item in reversed(documento.items()):
+                item = [item]
+                colleccion.update_one(nombre_documento, {"$set":dict(item)})
+
+            print("Se han actualizado los valores")
+
         else:
-            print('Ha introducido mal la calidad del pack')
-    
+            print("Se ha producido un error, por favor inserte bien la cantidad de campos que quiere actualizar.")
     except:
-        return
+        print('Ha introducido mal algun valor, por favor intentelo de nuevo')
+
+    
+            
