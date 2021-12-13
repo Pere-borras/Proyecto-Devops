@@ -1,3 +1,4 @@
+from ast import literal_eval
 from encontrar_documentos.query import sanear_query
 from encontrar_documentos.request_query import query_request
 from encontrar_documentos.app import app
@@ -19,11 +20,29 @@ if pregunta == '1':
         print('Ha introducido los datos de manera incorrecta. Inténtelo de nuevo.')
 
 elif pregunta == '2':
-    # obtener documentos de la BD
-    reiniciar_hugo()
-    consulta = sanear_query(query_request())
-    json_files = mongo_find(print(consulta))
-    app(json_files)
+
+        # obtener documentos de la BD
+
+        consulta = sanear_query(query_request())
+
+        print()
+        print()
+
+        carpeta = input('Si quieres, puedes crear una carpeta nueva donde almacenar los datos dentro de Hugo para poder visualizarlos en directamente en la página web. Si quieres que se guarde en la carpeta "Packs", simplemente pulsa Enter: ')
+
+        try: # convertir string a dict
+            consulta = literal_eval(consulta)
+        except: # si no es posible convertir a dict
+            print('Los datos introducidos son incorrectos, inténtalo de nuevo')
+        
+        print()
+        print('Se está buscando ' + str(consulta) + ' en la base de datos')
+        print()
+
+        carpeta = reiniciar_hugo(carpeta)
+
+        json_files = mongo_find(consulta)
+        app(json_files, carpeta)
 
 elif pregunta == '3':
     # actualizar algún campo de los documentos en la BD
