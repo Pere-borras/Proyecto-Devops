@@ -11,7 +11,7 @@ Este proyecto consiste en la creación de un programa Python que sea capaz de ob
 
 #### Arquitectura de la aplicación y tecnologías usadas.
 
-foto de arquitectura
+![Diagra de arquitectura](https://user-images.githubusercontent.com/91556389/145817110-cb0b500e-09e2-4738-99e0-e77afcdfb94c.png)
 
 Las tecnologías usadas en este proyecto han sido:
 
@@ -27,6 +27,3 @@ Las tecnologías usadas en este proyecto han sido:
 
 <img width="1304" alt="clockify" src="https://user-images.githubusercontent.com/91556382/145798715-9b447694-ef98-4c14-b273-646523b8d808.png">
 
-#### Diagrama de arquitectura
-
-![Diagra de arquitectura](https://user-images.githubusercontent.com/91556389/145817110-cb0b500e-09e2-4738-99e0-e77afcdfb94c.png)
