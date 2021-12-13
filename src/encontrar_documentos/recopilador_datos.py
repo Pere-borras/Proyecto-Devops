@@ -1,7 +1,5 @@
 def recopilador_datos(json_arr):
 
-    assert isinstance(json_arr, dict)
-
     output = []
     json_contenidos = json_arr['contenidos']
     llaves_contenidos = json_contenidos.keys()
@@ -41,5 +39,4 @@ def recopilador_datos(json_arr):
         output.append('        ' + '- ' + 'Demanda: ' +
                       str(json_arr['contenidos'][str(item)]['caracteristicas']['Demanda']))
 
-    assert isinstance(output, list)
     return output

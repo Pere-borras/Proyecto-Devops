@@ -6,7 +6,6 @@ def conectar_con_mongo():
         client = MongoClient(uri)
         db = client.Proyecto_Dual
         collection = db.packs
-        assert isinstance(collection.find_one(), dict)
         print('La conexión con la base de datos ha sido un éxito.')
         return collection
     except:

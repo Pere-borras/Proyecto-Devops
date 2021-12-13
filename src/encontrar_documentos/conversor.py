@@ -5,8 +5,6 @@ n_archivo = 1
 
 def conversor(output, carpeta):
 
-    assert isinstance(output, list)
-
     global n_archivo
     ext_archivo = '.md'
     file = open(
