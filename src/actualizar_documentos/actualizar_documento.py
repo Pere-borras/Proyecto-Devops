@@ -2,8 +2,8 @@ import os, sys
 p = os.path.abspath('src')
 sys.path.insert(1,p)
 from mongo_archivos.conectar_con_mongo import conectar_con_mongo
-from actualizar_varios import actualizar_varios
-from actualizar_campo import actualizar_campo
+from actualizar_documentos.actualizar_varios import actualizar_varios
+from actualizar_documentos.actualizar_campo import actualizar_campo
 
 def actualizar_documento():
     

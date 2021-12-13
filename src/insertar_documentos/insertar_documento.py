@@ -2,7 +2,7 @@ import os, sys
 p = os.path.abspath('src')
 sys.path.insert(1,p)
 from mongo_archivos.conectar_con_mongo import conectar_con_mongo
-from recopilar_datos_documento import recopilar_datos_documento
+from insertar_documentos.recopilar_datos_documento import recopilar_datos_documento
 
 def insertar_documento ():
     try:
