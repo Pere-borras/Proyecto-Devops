@@ -1,18 +1,30 @@
+<!-- single.html se utiliza cuando se entra en un pack, es un html que solo se ejecuta cuando se quiere acceder a un documento Markdown desde la página web, por lo tanto, Hugo formatea el contenido del Markdown a HTML según el siguiente código. -->
+
+<!DOCTYPE html>
 <html>
+
   <head>
+
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     {{ range .Site.Params.css -}}
     <link rel="stylesheet" href="{{ . | relURL }}" />
     {{ end -}}
+
     <title>{{.Title}}</title>
+
   </head>
+  
   <body>
+
     {{ partial "header"}}
+
     <div class="contenido_single">{{.Content}}</div>
-    <br />
+
     {{ partial "aside" }}
-    <footer>{{ partial "footer" }}</footer>
+
+    {{ partial "footer" }}
+
   </body>
+
 </html>

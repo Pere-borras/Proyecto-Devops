@@ -1,28 +1,70 @@
+<!-- list.html solo se muestra cuando se tienen que listar todos los documentos que están dentro de un directorio. -->
+
+<!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8" />
     {{ range .Site.Params.css -}}
+    <!-- partial "header" indica que en este documento se inserta un HTML parcial, 
+    donde se encuentra el código que constituye el header. -->
+
     <link rel="stylesheet" href="{{ . | relURL }}" />
     {{ end -}}
-    <title>índice</title>
+    
+    <title>{{.Title}}</title>
+
   </head>
+
   <body>
+
     {{ partial "header" }}
+    <!-- partial "header" indica que en este documento se inserta un HTML parcial, 
+      donde se encuentra el código que constituye el header. -->
+
     {{ partial "aside" }}
+      <!-- partial "aside" indica que en este documento se inserta un HTML parcial, 
+      donde se encuentra el código que constituye el aside. -->
+
     <main>
       {{.Content}}
-      <!-- Variable para que muestre el título de todas las páginas-->
+      <!-- .Content es una variable de Hugo que se utiliza para listar los archivos Markdown. -->
+      
       {{range .Pages}}
+      <!-- range .Pages es una variable de Hugo, que funciona como si fuera un loop, recoge todos los archivos que se encuentran dentro de la carpeta content (los archivos Markdown), a los cuales les aplica el código que está recogido en los siguientes <div>. -->
+
       <div>
+
         <div class="titulo_pack">
-             <a href="{{.URL}}">{{.Title}}</a>
+          <a href="{{.URL}}">{{.Title}}</a>
         </div>
-        <div class="tag">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
+
+        <div class="tag">
+          {{ if .Params.tags }}
+          <strong>Tags:</strong>
+          {{range .Params.tags}}
+          <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> 
+          {{end}}
+          {{end}}
+
+          <!-- Este código también utiliza variables de Hugo, donde "tags" es una taxonomía añadida a nuestra página, que distingue los packs por diferentes tipos de calidad, siendo uno de los valores más distintivos de cada pack. -->
+
+          <!-- Distingue cada archivo según su calidad ya que en la parte superior de cada archivo Markdown, se indica su calidad en la parte de tags: <calidad correspondiente>. Hugo identifica este parámetro porque está en el archivo de configuración (config.toml), en el apartado de [params] -->
+
+        </div>
 
         <p>Aquí encontrará el contenido del "{{.Title}}".</p>
-   </div>
+
+      </div>
+      
       {{end}}
+
     </main>
+
     {{ partial "footer"}}
+      <!-- partial "footer" indica que en este documento se inserta un HTML parcial, 
+      donde se encuentra el código que constituye el footer. -->
+
   </body>
+
 </html>
