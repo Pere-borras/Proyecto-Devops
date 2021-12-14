@@ -21,7 +21,7 @@ Las tecnologías usadas en este proyecto han sido:
 
 #### Diagrama de componentes
 
-foto de diagrama
+![Diagrama de componentes](https://user-images.githubusercontent.com/91556382/145839386-8f61f0bf-95d1-4c39-bdbd-7bebb007a4c1.jpg)
 
 #### Distribución del tiempo 
 
@@ -29,4 +29,4 @@ foto de diagrama
 
 #### Diagrama de arquitectura
 
-![Diagra de componentes](https://user-images.githubusercontent.com/91556389/145817110-cb0b500e-09e2-4738-99e0-e77afcdfb94c.png)
+![Diagra de arquitectura](https://user-images.githubusercontent.com/91556389/145817110-cb0b500e-09e2-4738-99e0-e77afcdfb94c.png)
