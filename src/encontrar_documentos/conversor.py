@@ -3,14 +3,12 @@ import os
 n_archivo = 1
 
 
-def conversor(output):
-
-    assert isinstance(output, list)
+def conversor(output, carpeta):
 
     global n_archivo
     ext_archivo = '.md'
     file = open(
-        os.path.join(os.getcwd(), str(n_archivo) + ext_archivo), "w")
+        os.path.join(os.getcwd(), 'hugo','content',str(carpeta),str(n_archivo) + ext_archivo), "w")
 
     for element in output:
         file.write(str(element) + os.linesep)

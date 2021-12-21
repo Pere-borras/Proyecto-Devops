@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    {{ range .Site.Params.css -}}
+    <link rel="stylesheet" href="{{ . | relURL }}" />
+    {{ end -}}
+    <title>índice</title>
+  </head>
+  <body>
+    {{ partial "aside" }}
+    <main>
+        <br>
+        <h2>Bienvenid@ a este asombroso y maravilloso portal</h2>
+        <br>
+        <p>Aquí podrás encontrar todo tipo de packs que se encuentran en nuestra base de datos.</p>
+        <p>Dentro de cada pack, podrás observar su contenido, precio e incluso el stock o su demanda.</p>
+      {{.Content}}
+      {{range .Pages}}
+      <div>
+        <div class="titulo_pack">
+             <a href="{{.URL}}">{{.Title}}</a>
+        </div>
+        <div class="tag">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
+
+        <p>Aquí encontrarás  todos los "{{.Title}}".</p>
+   </div>
+      {{end}}
+    </main>
+  </body>
+</html>
