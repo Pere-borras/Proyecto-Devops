@@ -429,6 +429,10 @@ Seguidamente, un diagrama de barras que cuenta de forma aproximada el tiempo tom
 
 <br>
 
+La barra gris es el tiempo estimado inicial, las barras de colores es el tiempo aproximado real que se ha estado con cada tarea épica.
+
+<br>
+
 ---
 
 Realizado por Daniel Sastre Hernández y Pere Antoni Borràs Expósito
