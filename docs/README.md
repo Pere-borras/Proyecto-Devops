@@ -1,10 +1,42 @@
-# Proyecto Devops - Daniel Sastre y Pere Antoni Borràs Expósito
+# Proyecto Devops
 
 ---
 
 <br>
 
-## 1. Introduccion
+## __Índice__
+
+<br>
+
+    1. Introducción
+
+    2. Metodología
+
+    3. Análisis
+        3.1 Partes interesadas
+        3.2 Tecnologías usadas
+
+    4. Diseño
+
+    5. Implementación
+        5.1 Herramientas utilizadas
+        5.2 Frontend
+            5.2.1 Funcionamiento de Hugo
+        5.3 Backend
+
+    6. Pruebas
+
+    7. Dificultades
+
+    8. Comparación temporal
+
+<br>
+
+---
+
+<br>
+
+## 1. __Introduccion__
 
 <br>
 
@@ -16,7 +48,7 @@ Este proyecto consiste en la creación de un programa que sea capaz de obtener d
 
 <br>
 
-## 2. Metodología
+## 2. __Metodología__
 
 <br>
 
@@ -96,12 +128,36 @@ La forma en la que se ha utilizado Github consiste en que cada uno de los colabo
 
 <br>
 
-## Análisis
+## 3. __Análisis__
 
-Para este proyecto se nos pedia usar obligatoriamente las tecnologias de Python, Mongodb, y Hugo.
-Con lo qual son las unicas tecnologias que hemos usado, ya que para este proyecto se requeria.
+<br>
 
-## 4. Diseño
+#### 3.1 __Partes interesadas__
+
+<br>
+
+Se identifican como partes interesadas:
+
+- La empresa que tiene la necesidad de implementar el software.
+- El usuario con la necesidad del uso del software.
+
+<br>
+
+#### 3.2 __Tecnologías usadas__
+
+<br>
+
+| ----- | Tecnologías | ----- |
+| -- | -- | -- |
+| Hugo | MongoDB | Python |
+
+<br>
+
+---
+
+<br>
+
+## 4. __Diseño__
 
 <br>
 <br>
@@ -132,22 +188,249 @@ En el esquema aparecen unos pequeños símbolos circulares amarillos, que repres
 
 En el esquema también se puede observar que existen cuatro módulos principales, los cuales se encargan cada uno de acometer las funciones CRUD, de forma respectiva.
 
-## Implementación
+<br>
 
-### Herramientas utilizadas
-Las herramientas que hemos utilizado han sido Visual Studio Code ya que es con lo que hemos aprendido
-en clase y con la herramienta que mas comodo nos sentimos, aparte hemos usado pymongo, las cuales son
-unas librerias de python para poder operar en mongodb.
+## 5. __Implementación__
 
-### Frontend
+### 5.1 __Herramientas utilizadas__
 
-### Backend
-El Backend es toda la parte de python y la base de datos. Por la parte de la base de datos solo almacena y distrubuye la informacion la cual este misma guarda los documentos con un squema especifico. Y por la otra 
-parte esta la parte de Python la cual aplica *CRUD*. Es decir, dependiendo de lo que le pidas,*C*(create) creara un
-archivo en la base de datos, *R*(read) buscara los archivos que se le pida y se los pasara a hugo convertidos en 
-markdown, *U*(update) Actulizara un documento o el campo de un documento, *D*(delete) Elimina un documento.
+<br>
 
+| ----------------- Herramientas ----------------- |
+| -- |
 
+| VSCode |
+Dnspython |
+Pymongo |
+Pytest |
+Clockify |
 
+<br>
 
+Las herramientas que hemos utilizado han sido Visual Studio Code, las librerías de Python pymongo y dnspython, las cuales se utilizan para poder operar en mongodb desde Python, pytest, que se ha utilizado para realizar los casos test y Clockify, para controlar el tiempo usado.
 
+<br>
+
+### 5.2 __Frontend__
+
+<br>
+
+El __frontend__ es la parte del generador de sitios estáticos, Hugo.
+
+El usuario visualizará el contenido que se encuentra en un directorio de Hugo, que el programa de Python sabe que se debe colocar ahí. Por lo tanto, la cantidad de páginas a mostrar variará según el contenido de ese directorio de Hugo.
+
+<br>
+
+#### 5.2.1 __Funcionamiento de Hugo__
+
+Hugo es un generador de sitios estáticos que visualizará todo el contenido que se encuentre dentro del directorio "content".
+
+La organización de los directorios es la siguiente:
+
+![directorios_hugo](img/directorios_hugo.png)
+
+Como se ha dicho antes, el contenido Markdown está dentro de "content" y el código HTML que se visualiza está localizado dentro de layouts.
+
+Dentro de los archivos HTML se encuentran variables que Hugo usa, en este caso, para detectar cambios en la carpeta "content", para que de esta manera la página cambie en el momento en el que se añadan o borren contenidos dentro de ese directorio.
+
+<br>
+
+### 5.3 __Backend__
+
+<br>
+
+El __backend__ es toda la parte de programación en Python y la base de datos, Mongo Atlas:
+
+La base de datos solo almacena y distrubuye la informacion, la cual guarda los documentos con un esquema específico, y por la otra parte, se encuentra Python, la cual aplica *CRUD*. 
+
+Es decir, dependiendo de lo que se necesita:
+
+- *C* (create): Insertará uno o varios archivos en la base de datos. 
+
+- *R* (read): Buscará los archivos que se le pida según unos parámetros indicados por el usuario y se los pasará al generador de sitios estáticos (Hugo) convertidos en Markdown. 
+
+- *U* (update): Actualizará un documento o el campo de un documento. 
+
+- *D* (delete): Elimina uno o varios documentos.
+
+Aún así, en la parte de insertar documentos, no se podrá insertar ningún documento que no cumpla el __esquema__ indicado en la base de datos, ya que es de tipo __estricto__:
+
+<br>
+
+![esquema_bd](img/esquema_bd.png)
+
+<br>
+
+---
+
+<br>
+
+## 6. __Pruebas__ 
+
+<br>
+
+En este apartado se comprobarán varias funcionalidades del programa, donde se realizarán varias pruebas para ver si el programa realiza todas las operaciones CRUD correspondientes.
+
+<br>
+
+- En primer lugar, abriremos el programa principal el cual nos pedirá mediante la escritura en la terminal.
+
+<br>
+
+![LauncerTerminal](img/LauncherTerminal.png)
+
+<br>
+
+- Crearemos un "pack" que se llame clase, el cual si es buscado en la base de datos, vemos que no existe desde un principio.
+
+<br>
+
+![No_existe_pack](img/No_existe_pack.png)
+
+<br>
+<br>
+
+- Seguidamente introducimos "1" en la terminal y nos dedicamos a crear el "pack".
+
+<br>
+
+![Pack_creado](img/Pack_creado.png)
+
+<br>
+<br>
+
+- Una vez terminado, podemos ver que el último mensaje es que se ha introducido el documento, por eso motivo comprobaremos manualmente que se encuentra dentro de la base de datos.
+
+<br>
+
+![Pack_en_mongo](img/Pack_en_mongo.png)
+
+<br>
+<br>
+
+- Ahora se realizará una búsqueda de este documento con el programa y lo colocará de forma que Hugo lo pueda visualizar.
+
+<br>
+
+![Read](img/Read.png)
+
+<br>
+<br>
+
+- Para mostrar la página de Hugo, se debe realizar el comando "hugo server -D" una vez nos encontremos en el directorio raíz de Hugo. (Es decir, en nuestro proyecto, dentro de la carpeta "hugo"), cuando el servidor esté activo, se navegará a la web a través de un buscador, accediendo al puerto 1313 (http://localhost:1313/).
+
+<br>
+
+![Pagina](img/Pagina.png)
+
+<br>
+<br>
+
+- Ahora procedemos a actualizar un campo del documento "Pack de clase" y luego cambiaremos todos sus valores.
+Aquí se actualizará el campo "Nombre pack" y el nuevo nombre será "Pack alumnado".
+
+<br>
+
+![Actualizar_1](img/Actualizar_nombre.png)
+
+<br>
+<br>
+
+- Se comprueba que el pack que en el campo "Nombre pack" contenía "Pack de clase" ahora contiene "Pack alumnado"
+
+<br>
+
+![No_existe_pack](img/No_existe_pack.png)
+
+![Pack_alumnado](img/Pack_alumnado.png)
+
+<br>
+<br>
+
+- Ahora se actualizaran todos los campos del "pack" sobre el que se estaban realizando cambios.
+
+<br>
+
+![Actualizado_varios](img/Actualizado_varios.png)
+
+<br>
+<br>
+
+- En la base de datos podemos ver que "Pack Alumnado" ya no existe y se han actualizado todos los valores de los campos.
+
+<br>
+
+![No_alumnado](img/No_alumnado.png)
+
+<br>
+<br>
+
+![Pack_de_enseñanza](img/Pack_de_enseñanza.png)
+
+<br>
+<br>
+
+- Por último, se eliminará un documento. 
+
+<br>
+
+![Borrar](img/Borrar.png)
+
+<br>
+<br>
+
+![Mongo_Borrar](img/Mongo_Borrar.png)
+
+<br>
+<br>
+
+---
+
+<br>
+
+## 7. __Dificultades__
+
+<br>
+
+Las dificultades que hemos tenido han sido varias. En el ámbito global hemos tenido dificultades con el tiempo,
+porque nunca antes habíamos hecho un proyecto de tal magnitud y por lo tanto, mucha incertidumbre. Además, el hecho de trabajar
+en un proyecto con un compañero, la organización y combinar nuestras ideas para llegar al mismo punto tambien se complicó al inicio.
+
+Otras dificultades han sido aprender a utilizar pymongo, la configuración y el tiempo que conlleva realizar la parte de Hugo, implementar SOLID y en lo que hemos fallado además de que no entendíamos el porqué, era aplicar e implementar TDD, ahora nos hemos dado cuenta de lo útil que es, pero a pesar de que en su momento quisimos implementarlo, el tiempo no era el suficiente.
+
+<br>
+
+---
+
+<br>
+
+## 8. __Comparación temporal__
+
+<br>
+
+El tiempo estimado del proyecto era un total de __203 tokens__, que sería el equivalente a __50,75 horas__.
+
+El tiempo inputado en la aplicación Clockify ha sido el siguiente:
+
+<br>
+
+![clocki](img/clockify.png)
+
+<br>
+<br>
+
+Hemos excedido el tiempo límite casi por __40 horas__, debido a la incertidumbre y desconocimiento de cuánto tomarían las tareas.
+Seguidamente, un diagrama de barras que cuenta de forma aproximada el tiempo tomado en cada tarea épica:
+
+<br>
+<br>
+
+![diagrama_barras](img/diagrama_barras_tiempo.png)
+
+<br>
+
+---
+
+Realizado por Daniel Sastre Hernández y Pere Antoni Borràs Expósito
+
+---
