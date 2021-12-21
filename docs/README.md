@@ -148,6 +148,53 @@ archivo en la base de datos, *R*(read) buscara los archivos que se le pida y se 
 markdown, *U*(update) Actulizara un documento o el campo de un documento, *D*(delete) Elimina un documento.
 
 
+## Pruebas 
+Lo primero que hacemos es abrir el programa principal el cual nos pedira mediante la escritura en la terminal.
+![LauncerTerminal](img/LauncherTerminal.png)
 
+Lo primero que haremos sera crear un pack que se llame clase el cual si buscamos en la base de datos vemos que no existe desde un principio y la 
+finalidad es que se cree ese documento.
+![No_existe_pack](img/No_existe_pack.png)
 
+Despues de esto pulsamos 1 en la terminal y nos dedicamos a crear el pack.
+![Pack_creado](img/Pack_creado.png)
 
+Cuando hemos acabado podemos ver que el ultimo mensaje es que se ha introducido el documento por eso al ir ahora a
+la base de datos y ver que ya existe.
+![Pack_en_mongo](img/Pack_en_mongo.png)
+
+Ahora enconraremos este documento y lo añadiremos a hugo 
+![Read](img/Read.png)
+
+Y ahora lo mostraremos en la pagina activando hugo, el cual se activa yendo a su carpeta y usando el comando 
+"hugo server -D"
+![Pagina](img/Pagina.png)
+
+Ahora actualizaremos un campo del documento Pack de clase y luego lo cambiaremos enteramente:
+
+Aqui actualizaremos el campo del nombre poniendole el nombre de Pack alumnado
+![Actualizar_1](img/Actualizar_nombre.png)
+
+Y ahora en la base de datos vemos que ya no existe el documento con ese documento y ahora tiene el nombre pack alumnado
+![No_existe_pack](img/No_existe_pack.png)
+![Pack_alumnado](img/Pack_alumnado.png)
+
+Y tambien podemos actualizar un documento entero haciendo el mismo proceso, para comprobarlo actualizaremos el
+el documento pack alumnado.
+![Actualizado_varios](img/Actualizado_varios.png)
+
+En la base de datos podemos ver que Pack Alumnado ya no existe y se ha actualizado al completo.
+![No_alumnado](img/No_alumnado.png)
+![Pack_de_enseñanza](img/Pack_de_enseñanza.png)
+
+Por ultimo veremos como eliminar un documento eliminando el ultimo pack que hemos actualizado que se llama Pack de enseñanza.
+![Borrar](img/Borrar.png)
+![Mongo_Borrar](img/Mongo_Borrar.png)
+
+## Dificultades
+Las dificultades que hemos tenido han sido varias, en ambito global hemos tenido dificultades con el tiempo,
+por que nunca antes habiamos hecho un proyecto y habia mucha incertidumbre, aparte de eso, el hecho de trabajar
+en un proyecto con un compañero y acabar nuestras ideas en el mismo punto tambien se complico al principio.
+
+Otras dificultades han sido acostumbrarse pymongo y como usarlo, aprender a usar hugo, implementar SOLID y
+sobretodo sus variables y sobretodo lo que mas nos ha costado es la implementacion de la TDD que es en lo que mas nos queremos esforcar a partir de ahora por que nos hemos dado cuenta de su importancia.
