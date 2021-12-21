@@ -2,6 +2,19 @@
 
 ---
 
+## Instalación
+
+En primer lugar, debes clonar este repositorio (desde la rama "main") con __git clone__.
+
+En segundo lugar, debes crear una carpeta (venv) dentro del proyecto e instalar los paquetes que se encuentran en __requirements.txt__, para hacer eso simplemente debes ejecutar por consola el comando __pip install -r requirements.txt__ una vez posicionado en el directorio raíz del proyecto.
+
+Por último, si deseas utilizar Hugo según está configurado aquí dentro, debes instalarlo en tu ordenador. 
+Puedes consultarlo en la documentación de la página oficial: https://gohugo.io/getting-started/installing/
+
+Si has completado los pasos previos, ya estás preparado para poder utilizar el programa y todas sus funcionalidades.
+
+---
+
 <br>
 
 ## __Índice__
